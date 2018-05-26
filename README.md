@@ -1,4 +1,4 @@
-# AngularDbmotion
+# Angular6-patiens-app
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3.
 
