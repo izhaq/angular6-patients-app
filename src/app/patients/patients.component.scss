@@ -1,0 +1,9 @@
+:host{
+  display: flex;
+  flex-wrap: wrap;
+
+  .patient-wrapper{
+    flex-grow: 1;
+    margin-bottom: 5px;
+  }
+}
