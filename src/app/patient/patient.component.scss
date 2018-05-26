@@ -4,4 +4,17 @@
   border: 0.5px solid;
   border-radius: 1px;
   padding: 5px;
+
+  .patient-info-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .top-user-info{
+      display: flex;
+    }
+    .bottom-user-info{
+      display: flex;
+    }
+  }
+
 }

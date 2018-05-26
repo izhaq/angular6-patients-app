@@ -16,5 +16,8 @@ export class PatientComponent implements OnInit {
   get patient(): any {
    return this.patientInfo ;
   }
+  getFullName(firstName, lastName): string{
+    return firstName + ' ' + lastName;
+  }
 
 }

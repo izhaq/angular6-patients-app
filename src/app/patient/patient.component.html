@@ -1,1 +1,7 @@
-<div placement="top" ngbTooltip="Tooltip on top">{{patient.firstName}}</div>
+<div class="patient-info-container" placement="auto" ngbTooltip="{{patient.comment}}">
+  <div class="top-user-info">{{getFullName(patient.firstName, patient.lastName)}}({{patient.dateOfBirth}})</div>
+  <div class="bottom-user-info">
+    <div>{{patient.gender}}</div>
+    <div>{{patient.mrn}}</div>
+  </div>
+</div>
