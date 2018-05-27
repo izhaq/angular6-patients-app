@@ -1,3 +1,8 @@
-<div class="patient-wrapper" *ngFor='let patient of patients'>
-  <app-patient [patientInfo]="patient"></app-patient>
+
+<div>
+<div class="patients-container">
+  <div class="patient" *ngFor='let patientRecord of patients'>
+    <app-patient [patientInfo]="patientRecord"></app-patient>
+  </div>
+</div>
 </div>

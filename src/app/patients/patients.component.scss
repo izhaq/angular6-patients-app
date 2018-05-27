@@ -1,9 +1,11 @@
 :host{
   display: flex;
-  flex-wrap: wrap;
-
-  .patient-wrapper{
-    flex-grow: 1;
-    margin-bottom: 5px;
+  justify-content: center;
+  .patients-container{
+    display: flex;
+    flex-wrap: wrap;
+    .patient{
+      padding: 3px;
+    }
   }
 }

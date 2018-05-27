@@ -17,6 +17,9 @@ export class PatientsComponent implements OnInit {
   }
 
   getPatients(): void {
-    this.patients = this.patientsService.getPatients();
+    this.patientsService.getPatients()
+      .subscribe((Patients) => {
+        this.patients = Patients
+      });
   }
 }
