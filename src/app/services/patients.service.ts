@@ -1,19 +1,18 @@
 import { Injectable } from '@angular/core';
-import {PATIENTS} from './mock-patients';
 import {Patient} from './patient';
-import { Observable, of } from 'rxjs';
+import { Observable} from 'rxjs';
+import { HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PatientsService {
 
-  private patients: Patient[];
+  private patientsUrl = 'api/patients';  // URL to web api
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getPatients(): Observable<Patient[]> {
-    //this.patients = PATIENTS;
-    return of(PATIENTS);
+    return this.http.get<Patient[]>(this.patientsUrl)
   }
 }

@@ -20,10 +20,6 @@ export class PatientComponent implements OnInit {
    return this.patientInfo ;
   }
 
-  getAge(date): any {
-    return moment().diff(date, 'years');
-  }
-
   getFullName(firstName, lastName): string{
     return firstName + ' ' + lastName;
   }
