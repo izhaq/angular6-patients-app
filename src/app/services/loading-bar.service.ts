@@ -13,6 +13,10 @@ export class LoadingBarService {
 
   removeRequest(){this.requestsCount --;}
 
+  setRequestObs(obs){
+    console.log(obs);
+  }
+
   showLoadingBar(){
     return this.requestsCount > 0;
   }

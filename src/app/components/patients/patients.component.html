@@ -2,7 +2,8 @@
 <div>
 <div class="patients-container">
   <div class="patient" *ngFor='let patientRecord of patients'>
-    <app-patient [patientInfo]="patientRecord"></app-patient>
+    <app-patient (mouseenter)="handleHover(patientRecord.mrn, $event);" [patientInfo]="patientRecord">
+    </app-patient>
   </div>
 </div>
 </div>

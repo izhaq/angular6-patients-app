@@ -1,16 +1,18 @@
-<div class="patient-info-container" placement="auto" ngbTooltip="{{patient.comment}}">
-  <div class="top-user-info">
-    <div>
-      <span class="full-name">
-        {{getFullName(patient.firstName, patient.lastName)}}
-      </span>
-      <span class="age">
-        ({{patient.dateOfBirth | ageInYears}})
-      </span>
+<div class="patient-info-container" placement="auto" [ngbTooltip]="patient.comment">
+  <div class="patient-info">
+    <div class="top-user-info">
+      <div class="name-and-age">
+        <span class="full-name">
+          {{getFullName(patient.firstName, patient.lastName)}}
+        </span>
+        <span class="age">
+          ({{patient.dateOfBirth | ageInYears}})
+        </span>
+      </div>
     </div>
-  </div>
-  <div class="bottom-user-info">
-    <span [ngClass]="patient.gender">{{patient.gender | gender}}</span>
-    <span>{{patient.mrn}}</span>
+    <div class="bottom-user-info">
+      <span [ngClass]="patient.gender">{{patient.gender | gender}}</span>
+      <span>{{patient.mrn}}</span>
+    </div>
   </div>
 </div>

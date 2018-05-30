@@ -1,13 +1,17 @@
 import { Observable} from 'rxjs';
 import { Injectable } from '@angular/core';
-import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest} from '@angular/common/http';
+import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HttpHeaders} from '@angular/common/http';
 
 @Injectable()
 export class HeaderInterceptor implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-    const clonedRequest = req.clone({ headers: req.headers.set('dbMotion', '1234') });
+    const headers = new HttpHeaders({
+      'dbMotion': '1234',
+      'Content-Type': 'application/json'
+    });
+    const clonedRequest = req.clone({headers});
     return next.handle(clonedRequest);
   }
 }

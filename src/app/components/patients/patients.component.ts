@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PatientsService } from '../../services/patients.service';
+import { AppHttpService } from '../../services/app-http.service';
 import {Patient} from '../../services/patient';
 
 @Component({
@@ -10,16 +10,22 @@ import {Patient} from '../../services/patient';
 export class PatientsComponent implements OnInit {
 
   patients: Patient[];
-  constructor(private patientsService: PatientsService) { }
+  constructor(private appHttpService: AppHttpService) { }
 
   ngOnInit() {
     this.getPatients();
   }
 
   getPatients(): void {
-    this.patientsService.getPatients()
+    this.appHttpService.getPatients()
       .subscribe((Patients) => {
         this.patients = Patients
       });
+  }
+
+  handleHover(id, $event){
+    this.appHttpService.addFeedback(id).subscribe((feedback) => {
+      console.log(feedback);
+    });
   }
 }

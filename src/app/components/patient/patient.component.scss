@@ -7,10 +7,24 @@
 
   .patient-info-container{
     display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  .patient-info{
+    display: flex;
     flex-direction: column;
     max-width: 100%;
     .top-user-info{
       display: flex;
+      .name-and-age{
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .full-name{
+        padding-right: 5px;
+      }
     }
     .bottom-user-info{
       display: flex;
