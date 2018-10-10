@@ -8,7 +8,7 @@ export class HeaderInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
     const headers = new HttpHeaders({
-      'dbMotion': '1234',
+      'patients': '1234',
       'Content-Type': 'application/json'
     });
     const clonedRequest = req.clone({headers});
